@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список самых высоких деревьев</title>
+</head>
+
+<body>
+    <p align="center">
+        <a href="index.html">Главная</a> |
+        <a href="tree.html">О деревьях</a> |
+        <a href="table.html">Таблица</a> |
+    </p>
+
+    <hr>
+
+    <details>
+        <summary>График</summary>
+        <form>
+            <table>
+                <tr>
+                    <th>Значение по оси OX</th>
+                    <th>Результат</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="tree" id="type"> <label for="type">Тип</label>
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                        Максимальная высота
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="tree" id="continent"> <label for="continent">Континент</label></td>
+                    <td><input type="checkbox">
+                        Минимальная высота</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="tree" id="lifespan"> <label for="lifespan">Продолжительность
+                            жизни</label></td>
+                    <td><input type="checkbox"> Максимальный диаметр</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox">
+                        Минимальный диаметр</td>
+                </tr>
+            </table>
+        </form>
+    </details>
+
+    <details>
+        <summary>Фильтр</summary>
+        <form>
+            <p>
+                <label for="name">Название:</label>
+                <input type="text" id="name_id" name="name">
+            </p>
+            <p>
+                <label for="type">Тип:</label>
+                <input type="text" id="type_id" name="type">
+            </p>
+            <p>
+                <label for="continent">Континент:</label>
+                <input type="text" id="continent_id" name="continent">
+            </p>
+            <p>
+                <label for="height_down">Высота от:</label>
+                <input type="text" id="height_down" name="height_down">
+                <label for="height_up">до:</label>
+                <input type="text" id="height_up" name="height_up">
+            </p>
+            <p>
+                <label for="diametr_down">Диаметр от:</label>
+                <input type="text" id="diametr_down" name="diametr_down">
+                <label for="diametr_up">до:</label>
+                <input type="text" id="diametr_up" name="diametr_up">
+            </p>
+            <p>
+                <label for="lifespan_down">Продолжительность жизни от:</label>
+                <input type="text" id="lifespan_down" name="lifespan_down">
+                <label for="lifespan_up">до:</label>
+                <input type="text" id="lifespan_up" name="lifespan_up">
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Сортировка</summary>
+
+        <label for="sort_1">Первый уровень:</label>
+        <select name="sort_1" id="sort_1">
+            <option value="-1">Нет</option>
+            <option value="0">Высота</option>
+            <option value="1">Диаметр</option>
+            <option value="2">Продолжительность жизни</option>
+            <option value="3">Название</option>
+            <option value="4">Тип</option>
+            <option value="5">Континент</option>
+        </select>
+        <label for="down_1">По убыванию?</label><input type="checkbox" name="down_1" id="down_1"> 
+        
+        <br>
+
+        <label for="sort_2">Второй уровень:</label>
+        <select name="sort_2" id="sort_2">
+            <option value="-1">Нет</option>
+            <option value="0">Высота</option>
+            <option value="1">Диаметр</option>
+            <option value="2">Продолжительность жизни</option>
+            <option value="3">Название</option>
+            <option value="4">Тип</option>
+            <option value="5">Континент</option>
+        </select>
+        <label for="down_2">По убыванию?</label><input type="checkbox" name="down_2" id="down_2"> 
+        
+        <br>
+
+        <label for="sort_3">Третий уровень:</label>
+        <select name="sort_3" id="sort_3">
+            <option value="-1">Нет</option>
+            <option value="0">Высота</option>
+            <option value="1">Диаметр</option>
+            <option value="2">Продолжительность жизни</option>
+            <option value="3">Название</option>
+            <option value="4">Тип</option>
+            <option value="5">Континент</option>
+        </select>
+        <label for="down_3">По убыванию?</label><input type="checkbox" name="down_3" id="down_3"> 
+        
+        <br>
+        
+        <input type="button" value="Сортировать">
+        
+    </details>
+
+    <table border="1">
+        <thead align="center">
+            <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Продолжительность жизни, лет</th>
+                <th>Континент</th>
+                <th>Высота, м</th>
+                <th>Диаметр, м</th>
+            </tr>
+        </thead>
+        <tbody align="justify">
+            <tr>
+                <td>Береговая Секвойя (Sequoia sempervirens)</td>
+                <td>Хвойное</td>
+                <td>2000</td>
+                <td>Северная Америка</td>
+                <td>116.07</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Гималайский кипарис (Cupressus torulosa)</td>
+                <td>Хвойное</td>
+                <td>500</td>
+                <td>Азия</td>
+                <td>102.3</td>
+                <td>5.5</td>
+            </tr>
+            <tr>
+                <td>Горный ясень (Eucalyptus regnans)</td>
+                <td>Цветковое</td>
+                <td>400</td>
+                <td>Австралия</td>
+                <td>100.5</td>
+                <td>5.7</td>
+            </tr>
+            <tr>
+                <td>Ситхинская ель (Picea sitchensis)</td>
+                <td>Хвойное</td>
+                <td>500</td>
+                <td>Северная Америка</td>
+                <td>100.2</td>
+                <td>4.9</td>
+            </tr>
+            <tr>
+                <td>Дугласова пихта (Pseudotsuga menziesii)</td>
+                <td>Хвойное</td>
+                <td>1000</td>
+                <td>Северная Америка</td>
+                <td>99.7</td>
+                <td>4.6</td>
+            </tr>
+            <tr>
+                <td>Желтая меранти (Shorea faguetiana)</td>
+                <td>Цветковое</td>
+                <td>300</td>
+                <td>Азия</td>
+                <td>97.58</td>
+                <td>3.8</td>
+            </tr>
+            <tr>
+                <td>Гигантская секвойя (Sequoiadendron giganteum)</td>
+                <td>Хвойное</td>
+                <td>3000</td>
+                <td>Северная Америка</td>
+                <td>96.3</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>Южный синий эвкалипт (Eucalyptus globulus)</td>
+                <td>Цветковое</td>
+                <td>300</td>
+                <td>Австралия</td>
+                <td>90.7</td>
+                <td>3.2</td>
+            </tr>
+            <tr>
+                <td>Благородная пихта (Abies procera)</td>
+                <td>Хвойное</td>
+                <td>500</td>
+                <td>Северная Америка</td>
+                <td>89.9</td>
+                <td>3.7</td>
+            </tr>
+            <tr>
+                <td>Мануковое дерево (Eucalyptus viminalis)</td>
+                <td>Цветковое</td>
+                <td>400</td>
+                <td>Австралия</td>
+                <td>89.0</td>
+                <td>4.1</td>
+            </tr>
+            <tr>
+                <td>Диниция великая (Dinizia excelsa)</td>
+                <td>Цветковое</td>
+                <td>400</td>
+                <td>Южная Америка</td>
+                <td>88.5</td>
+                <td>4.3</td>
+            </tr>
+            <tr>
+                <td>Буровато-струнная кора (Eucalyptus obliqua)</td>
+                <td>Цветковое</td>
+                <td>400</td>
+                <td>Австралия</td>
+                <td>88.5</td>
+                <td>4.0</td>
+            </tr>
+            <tr>
+                <td>Альпийский ясень (Eucalyptus delegatensis)</td>
+                <td>Цветковое</td>
+                <td>300</td>
+                <td>Австралия</td>
+                <td>87.9</td>
+                <td>3.6</td>
+            </tr>
+            <tr>
+                <td>Менгарис (Koompassia excelsa)</td>
+                <td>Цветковое</td>
+                <td>250</td>
+                <td>Юго-Восточная Азия</td>
+                <td>85.76</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>Шорея серебрянолистная (Shorea robusta)</td>
+                <td>Цветковое</td>
+                <td>300</td>
+                <td>Юго-Восточная Азия</td>
+                <td>84.85</td>
+                <td>2.9</td>
+            </tr>
+            <tr>
+                <td>Шорея суперба (Shorea superba)</td>
+                <td>Цветковое</td>
+                <td>200</td>
+                <td>Юго-Восточная Азия</td>
+                <td>83.69</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>Блестящая смола (Eucalyptus nitens)</td>
+                <td>Цветковое</td>
+                <td>270</td>
+                <td>Юго-Восточная Австралия</td>
+                <td>82.1</td>
+                <td>3.5</td>
+            </tr>
+            <tr>
+                <td>Тайвания (Taiwania cryptomerioides)</td>
+                <td>Хвойное</td>
+                <td>500</td>
+                <td>Восточная Азия</td>
+                <td>81.3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Сахарная сосна (Pinus lambertiana)</td>
+                <td>Хвойное</td>
+                <td>1000</td>
+                <td>Северная Америка</td>
+                <td>79.12</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>Абиес ченсиенсис (Salouenensis)</td>
+                <td>Хвойное</td>
+                <td>700</td>
+                <td>Восточная Азия</td>
+                <td>78.56</td>
+                <td>1.7</td>
+            </tr>
+            <tr>
+                <td>Западный болиголов (Tsuga heterophylla)</td>
+                <td>Хвойное</td>
+                <td>100</td>
+                <td>Северная Америка</td>
+                <td>76.15</td>
+                <td>4.1</td>
+            </tr>
+            <tr>
+                <td>Надежда нутанс (Hopea nutans)</td>
+                <td>Цветковое</td>
+                <td>400</td>
+                <td>Юго-Восточная Азия</td>
+                <td>75.67</td>
+                <td>2.6</td>
+            </tr>
+            <tr>
+                <td>Шорея джохоренская (Shorea johorensis)</td>
+                <td>Цветковое</td>
+                <td>300</td>
+                <td>Юго-Восточная Азия</td>
+                <td>75.01</td>
+                <td>3.6</td>
+            </tr>
+            <tr>
+                <td>Шорея смитианская (Shorea smithiana)</td>
+                <td>Цветковое</td>
+                <td>600</td>
+                <td>Юго-Восточная Азия</td>
+                <td>74.03</td>
+                <td>1.9</td>
+            </tr>
+            <tr>
+                <td>Сосна пондероза (Pinus ponderosa)</td>
+                <td>Хвойное</td>
+                <td>500</td>
+                <td>Западная часть Северной Америки</td>
+                <td>73.01</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Энтандрофрагма превосходная (Entandrophragma excelsum)</td>
+                <td>Цветковое</td>
+                <td>500</td>
+                <td>Восточная Африка</td>
+                <td>71.55</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>Сиднейская голубая камедь (Eucalyptus saligna)</td>
+                <td>Цветковое</td>
+                <td>700</td>
+                <td>Южная Африка</td>
+                <td>70.3</td>
+                <td>2.4</td>
+            </tr>
+            <tr>
+                <td>Великая ель (Abies grandis)</td>
+                <td>Хвойное</td>
+                <td>600</td>
+                <td>Западная часть Северной Америки</td>
+                <td>70.2</td>
+                <td>7.5</td>
+            </tr>
+            <tr>
+                <td> Жёлтая меранти (Shorea gibbosa)</td>
+                <td>Цветковое</td>
+                <td>500</td>
+                <td>Юго-Восточная Азия</td>
+                <td>69.7</td>
+                <td>1.9</td>
+            </tr>
+            <tr>
+                <td>Кипарис Лоусона (Chamaecyparis lawsoniana)</td>
+                <td>Хвойное</td>
+                <td>400</td>
+                <td>Северная Америка</td>
+                <td>69.43</td>
+                <td>7.5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
