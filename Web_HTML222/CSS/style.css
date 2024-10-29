@@ -1,0 +1,34 @@
+.main{
+    margin: 0 auto;
+    display: inline-block;
+    background-color: green;
+    width: 80%;
+    margin: 0px auto;
+    padding: 1px;
+}
+
+.box{
+    display: inline-block;
+    background-color: white;
+    width: 32.90%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.head{
+    display: inline-block;
+    background-color: white;
+    width: 70%;
+}
+
+.container{
+    display: block;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+span{
+    font-weight: bold;
+}
