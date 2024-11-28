@@ -1,0 +1,14 @@
+.col {
+    background: lightgrey;
+    border: solid thin grey;
+}
+
+
+.row {
+    height: 50px;
+    border: solid thin red;
+}
+
+.olo{
+    background-color: red;
+}

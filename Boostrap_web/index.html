@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+
+            <div class="container-fluid">
+                <!-- Заголовок -->
+                <a class="navbar-brand mx-auto" href="#">Топ высоких деревьев</a>
+
+                <!-- Кнопка для свернутого меню -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Меню -->
+                <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Меню 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Меню 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Меню 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <div id="gallery" class="carousel slide carousel-dark" data-bs-ride="carousel">
+        <!-- Содержимое галереи -->
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="style/Photo/Гигантская секвойя.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="carousel-item ">
+                <img src="style/Photo/Ель Ситха.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="style/Photo/Жёлтая меранди.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="style/Photo/Кипарис Гималайский.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="style/Photo/Камедь манны.jpg" class="d-block mx-auto" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="style/Photo/Рябина.jpg" class="d-block mx-auto" alt="">
+            </div>
+        </div>
+        <!-- Кнопки управления -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#gallery" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gallery" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+
+
+
+    <div class="container my-4">
+
+        <div class="row g-3 ">
+            <!-- Первый блок -->
+            <div class="col-sm-6 col-lg-6 ">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Кипарис Гималайский.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Кипарис Гималайский</div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Это дерево среднего или очень большого размера, обычно вырастающее до 45 м (150 футов) в высоту,
+                        а в юго-западном Китае встречаются ещё более крупные экземпляры. В июне 2023 года была
+                        обнаружена особь высотой 102,3 м (336 футов). Это открытие делает Cupressus torulosa вторым по
+                        высоте видом деревьев на Земле, уступающим только секвойе вечнозелёной.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-6">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Рябина.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Рябина</div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Eucalyptus regnans, известный также как эвкалипт царственный (в штате Виктория), эвкалипт
+                        гигантский или болотный эвкалипт (в Тасмании) или эвкалипт смолистый, — это вид очень высоких
+                        лесных деревьев, произрастающих в австралийских штатах Тасмания и Виктория. Это дерево с прямым
+                        стволом и гладкой серой корой, но с грубыми коричневыми наростами у основания,
+                        глянцево-зелёными, ланцетовидными или изогнутыми взрослыми листьями, цветочными почками,
+                        собранными в группы от девяти до пятнадцати штук, белыми цветками и чашевидными или коническими
+                        плодами. Это самое высокое из всех цветковых растений; самый высокий из измеренных живых
+                        экземпляров, названный Центурион, достигает 100 метров (328 футов) в высоту в Тасмании.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm-6 col-lg-6">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Гигантская секвойя.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Гигантская Секвойя</div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Sequoia sempervirens — единственный ныне живущий вид рода Sequoia семейства кипарисовых
+                        Cupressaceae. Распространённые названия включают прибрежный секвойядендрон, прибрежный
+                        секвойядендрон гигантский и калифорнийский секвойядендрон. Это вечнозелёное, долгоживущее,
+                        однодомное дерево, живущее 1200–2200 лет и более. К этому виду относятся самые высокие живые
+                        деревья на Земле, достигающие 115,9 м (380,1 фута) в высоту (без корней) и 8,9 м (29 футов) в
+                        диаметре на высоте груди. Эти деревья также являются одними из самых долгоживущих на Земле. До
+                        начала коммерческой вырубки и расчистки земель в 1850-х годах это массивное дерево встречалось
+                        естественным образом на территории площадью около 810 000 га (2 000 000 акров).
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-6">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Ель Ситха.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Ель Ситха</div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Picea sitchensis — единственный ныне живущий вид рода Sitka семейства сосновых Pinaceae.
+                        Распространённые названия включают ситхинскую ель, ситхинскую пихту и прибрежную ель. Это
+                        вечнозелёное дерево, живущее до 500–700 лет. Высота взрослой ели ситхи достигает 70–100 м
+                        (230–330 футов), а диаметр ствола — до 5 м (16 футов) на высоте груди. Вид произрастает вдоль
+                        тихоокеанского побережья Северной Америки, от Аляски до Северной Калифорнии. Это одно из
+                        важнейших хвойных деревьев для лесозаготовок, используемое в строительстве и производстве
+                        музыкальных инструментов благодаря прочной и лёгкой древесине. В естественных условиях вид
+                        устойчив к ветрам и влажному климату, часто образуя леса на крутых склонах и вблизи рек.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm-6 col-lg-6">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Жёлтая меранди.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Жёлтая Меранти</div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Это листопадное дерево, способное вырастать до 7–12 м (23–39 футов) в высоту. Оно имеет
+                        характерную
+                        жёлтую древесину, которая ценится за её прочность и устойчивость к вредителям. Растение
+                        распространено в тропических и субтропических регионах Азии, Австралии и Африки. Цветы мелии
+                        душистые, лилового цвета, а плоды — круглые, жёлтые, токсичны для человека, но поедаются
+                        птицами.
+                        Жёлтая меранди используется в ландшафтном дизайне, а её древесина — для производства мебели и
+                        декоративных изделий.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-6">
+                <div class="border p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-image hover-overlay">
+                            <img src="style/Photo/Камедь манны.jpg" class="w-100" style="width: 100px; height: 70px;"/>
+                            <div class="mask" style="
+                                    background: linear-gradient(
+                                      45deg,
+                                      hsla(168, 85%, 52%, 0.5),
+                                      hsla(263, 88%, 45%, 0.5) 100%
+                                    );
+                                  "></div>
+                        </div>
+                        <div class="ms-3">Камедь манны </div>
+                    </div>
+                    <hr>
+                    <div class="mt-3 text-muted">
+                        Это вечнозелёное дерево, достигающее 30–50 м (98–164 футов) в высоту и до 1,5 м (5 футов) в
+                        диаметре на
+                        высоте груди. Растение произрастает в Австралии, встречаясь в основном в юго-восточных штатах,
+                        таких как
+                        Виктория, Новый Южный Уэльс и Тасмания. Камедь манны знаменита своей корой, которая отслаивается
+                        длинными лентами, и сладким выделением, известным как "манна". Это вещество используется в
+                        традиционной
+                        медицине и как источник пищи для местной фауны, включая коал. Древесина этого вида применяется в
+                        строительстве и для производства бумаги.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container">
+            <p class="mb-0 text-center">
+                Автор: Никита Вдовенков | Контакты: <a href="mailto:ivan@example.com"
+                    class="text-white">raketa5556@yandex.ru</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
