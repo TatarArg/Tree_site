@@ -1,0 +1,133 @@
+mixin createMenu(menu, active)
+    each value, key in menu
+        if active == key
+            a.active(href= value)= key
+        else
+            a(href= value)= key
+
+mixin section(item)
+    section
+        h3= item.header
+        img(src= require("./images/" + item.image))
+        p= item.text
+            a(href="#") &hellip;
+
+mixin createMenuBuild(menu, active)
+    - var i = 0;
+    each value, key in menu
+        if i == 1
+            a.active(href= "building.html")= active
+        else
+            a(href= value)= key
+        -i++
+
+
+mixin tableTree(data)
+  table(class="table")
+   thead(class="table__head")
+     tr(class="table__row")
+       each key in Object.keys(data[0])
+         th(class="table__cell") #{key}
+   tbody(class="table__body")
+       each row in data
+         tr(class="table__row")
+           each value in Object.values(row)
+             td(class="table__cell") #{value}
+
+mixin setTitle(customTitle)
+   - var originalTitle = title;
+   - title = customTitle;
+   block
+   - title = originalTtitle;
+
+mixin graphSection(title, rows)
+  details
+    summary= title
+    form
+      table
+        tr
+          th Значение по оси OX
+          th Результат
+        each row in rows
+          tr
+            td
+              if row.id
+                input(type="radio", name="tree", id=row.id)
+                label(for=row.id)= row.label
+            td
+              input(type="checkbox")
+              = row.checkboxLabel
+
+mixin filterSection(title, fields)
+  details
+    summary= title
+    form
+      each field in fields
+        p
+          label(for=field.id)= field.label
+          input(type="text", id=field.id, name=field.name)
+          if field.range
+            label(for=field.range) до:
+            input(type="text", id=field.range, name=field.range)
+
+mixin sortSection(title)
+  details
+    summary= title
+    form
+      each i in [1, 2, 3]
+        label(for=`sort_${i}`)= `Уровень ${i}:`
+        select(name=`sort_${i}`, id=`sort_${i}`)
+          option(value="-1") Нет
+          option(value="0") Высота
+          option(value="1") Диаметр
+          option(value="2") Продолжительность жизни
+          option(value="3") Название
+          option(value="4") Тип
+          option(value="5") Континент
+        label(for=`down_${i}`) По убыванию?
+        input(type="checkbox", name=`down_${i}`, id=`down_${i}`)
+        br
+      input(type="button", value="Сортировать")
+
+mixin menu(list, number)
+  div.menu
+    each item, index in list
+      div.menu__item
+        if index >= number - 1
+          img(class="menu__item-image menu__item-image_float" src= require("./images/" + item.image))
+        else
+          img.menu__item-image(src= require("./images/" + item.image))
+        h2(class="menu__item-title")= item.header
+        div(class="menu__item-description")= item.text
+
+
+        
+
+mixin headerMenu(items, active)
+    div(class="header")
+        div(class="header__title") Самые высокие деревья
+        div(class="header__spacer")
+        each key, item in items
+            if active == item
+               a(class="header__menu-item header__menu-item_active" href=key)= item
+            else
+               a(class="header__menu-item" href=key)= item
+
+
+mixin createFooter(item)
+    footer(class="footer")
+       div(class="footer__item")=item
+
+mixin createCards(list)
+    div.card
+      each item in list
+        div.card__photo
+           img.card__image(src= require("./images/" + item))
+
+
+mixin createContent(list)
+    each item in list
+      div(class="media-card")
+        img(src=require("./images/"+ item.image) class="media-card__image")
+        p(class="media-card__text")= item.text
+    

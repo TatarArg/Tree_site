@@ -46,10 +46,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.pug"),
       filename: "index.html",
-    }),
+    }), 
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "building.pug"),
       filename: "building.html"
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src", "table.pug"),
+      filename: "table.html"
       }),
      
     new FileManagerPlugin({

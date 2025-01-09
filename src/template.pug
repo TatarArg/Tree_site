@@ -1,18 +1,18 @@
-include components/mixin.pug
-include components/data.pug
+include companents/mixin.pug
+include companents/data.pug
 doctype html
-
 html(lang="ru")
+
     head
-        title #{title}
+        
     body
         block header
-            h2= title
+           +createHeader()
+            
+        block card
         
-        block nav
-        
-        block content
+        block menu
 
         block footer
-            footer
-                h4 &copy; Пример html-страницы
+            +createFooter("Вдовенков Никита")
+            

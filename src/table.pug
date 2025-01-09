@@ -1,0 +1,16 @@
+extends template
+
+block header
+  +headerMenu(dictMenu, 'Таблица с деревьями')
+
+block menu
+  +graphSection('График', listForm)
+  +filterSection('Фильтр', listFilter)
+  +sortSection('Сортировка')
+  
+  content
+     +tableTree(listtable)
+
+
+block footer
+    +createFooter("Вдовенков Никита")

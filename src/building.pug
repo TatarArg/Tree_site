@@ -1,12 +1,13 @@
 extends template
 
-block nav
-    nav
-        +createMenuBuild(dictMenu, structures[0].menuItem)
+block header
+   header
+    +headerMenu(dictMenuB, 'Кипарис Гималайский')
 
-block content
-    image-block
-        img.big(src= require("./images/" + structures[0].pict))
-    section
-        p= structures[0].firstP
-        p= structures[0].secondP
+block menu
+   +createContent(structures)
+
+
+
+block footer
+    +createFooter("Вдовенков Никита")
