@@ -1,0 +1,113 @@
+colorText = #6f6d6d
+
+h2
+    margin 20px 10px
+    color colorText
+
+nav
+    back(0)
+    text-align right
+    background-color lightgray
+    box-shadow: 10px 5px 5px gray;
+    margin 0px 10px
+
+    & a
+        display inline-block
+        padding 1%
+        color colorText
+        text-decoration: none
+
+        &:hover
+        &.active
+            background-color #f87777
+            color #f8f8f8
+
+div.images
+    display grid
+    grid-template-columns repeat(5, 1fr)
+    grid-gap 0.5%
+    back(1)
+    margin 10px 10px
+    padding 10px
+    background-color lightgray
+    box-shadow: 10px 5px 5px gray;
+
+    & img
+        width: 100%
+
+article
+    width 80%
+    margin auto
+    display grid
+    grid-template-columns repeat(3, 1fr)
+    grid-gap 4%
+
+    & section
+        display grid
+        grid-template-columns 1fr 2fr
+        grid-gap 2%
+        align-items center
+        background-color lightgray
+        box-shadow: 10px 5px 5px gray;
+
+        & h3
+            grid-column 1/3
+            margin 0
+            text-align center
+            color colorText
+        & img
+            width: 100%
+
+image-block
+    width 100%
+    display inline-block
+    text-align center
+    margin-top 10px
+
+section
+    display grid
+    grid-template-columns 1fr 1fr
+    grid-gap 2%
+    padding 2%
+
+    & p
+        padding 5px
+        margin 0px
+        color colorText
+
+
+footer
+    background-color colorText
+    margin 0px 10px
+
+    & h4
+        padding 5px
+        color #f8f8f8
+
+@media (max-width: 650px)
+    div.images
+        overflow hidden
+        grid-template-columns 1fr
+
+    article
+        grid-template-columns 1fr
+        padding 10% 0px
+        grid-gap 1.5%
+        section
+            h3
+                text-align: left
+
+    section
+        display grid
+        grid-template-columns 1fr
+
+.blue {
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+}
+.white {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}

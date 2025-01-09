@@ -1,0 +1,33 @@
+mixin createMenu(menu, active)
+    each value, key in menu 
+        if active == key 
+            a.active(href=value)= key 
+        else 
+            a(href=value)= key
+
+
+mixin section(header, image, text)
+    h3= header
+    img(src=require("./images/" + image))
+    p= text
+      a(href="#") &hellip;
+
+
+mixin createMenuBuild(menu, active)
+    - var i = 0;
+    each value, key in menu
+        if i == 1
+            a.active(href= "building.html")= active
+        else
+            a(href= value)= key
+        -i++
+		
+mixin createTable(n)
+    table(border=1)
+        - for (var i = 0; i < n; i++) 
+            tr
+                - for (var j = 0; j < n; j++) 
+                    if ((Math.floor(i / 2) + Math.floor(j / 2)) % 2 == 0) 
+                        td(class="blue")
+                    else
+                        td(class="white") 
