@@ -1,0 +1,8 @@
+svg { 
+    border: 1px solid black; 
+}
+
+.form_1 { 
+    display: flex; 
+    gap: 10px; 
+}
