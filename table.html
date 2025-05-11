@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список самых высоких деревьев</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JavaScript/data.js"></script>
+    <script src="JavaScript/createSort.js"></script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/table.js"></script>
+    <script src="JavaScript/filter.js"></script>
+    <script src="JavaScript/sort.js"></script>
+
+    <script src="JavaScript/chart.js"></script>
+    <script src="JavaScript/graphMain.js"></script>
+</head>
+
+<body>
+    <p align="center">
+        <a href="index.html">Главная</a> |
+        <a href="tree.html">О деревьях</a> |
+        <a href="table.html">Таблица</a> |
+    </p>
+
+    <hr>
+
+    <details>
+        <summary>График</summary>
+      
+        <svg></svg>
+      
+        <div>
+          <p>Значение по оси OX:</p>
+          <label><input type="radio" name="groupOX" value="Тип" checked> Тип</label>
+          <label><input type="radio" name="groupOX" value="Континент"> Континент</label>
+          <label><input type="radio" name="groupOX" value="Продолжительность жизни, лет"> Продолжительность жизни</label>
+        </div>
+      
+        <div>
+          <p id="oY">Значение по оси OY:</p>
+          <label><input type="checkbox" id="maxHeight" checked> Максимальная высота</label>
+          <label><input type="checkbox" id="minHeight"> Минимальная высота</label>
+         </div>
+      
+        <div>
+          <p><label for="chartType">Тип графика:</label></p>
+          <select id="chartType">
+            <option value="scatter">Точечная диаграмма</option>
+            <option value="histogram">Гистограмма</option>
+            <option value="graphic">График функции</option>
+          </select>
+        </div>
+      
+        <button id="buildGraphButton">Построить график</button>
+      </details>
+    <details>
+        <summary>Фильтр</summary>
+        <form id="filter">
+            <p>
+                <label for="name">Название:</label>
+                <input type="text" id="treeName">
+            </p>
+            <p>
+                <label for="type">Тип:</label>
+                <input type="text" id="type">
+            </p>
+            <p>
+                <label for="continent">Континент:</label>
+                <input type="text" id="continent">
+            </p>
+            <p>
+                <label for="heightFrom">Высота:</label>
+                от <input type="number" id="heightFrom">
+                до <input type="number" id="heightTo">
+            </p>
+            <p>
+                <label for="diametrFrom">Диаметр:</label>
+                от <input type="number" id="diametrFrom">
+                до <input type="number" id="diametrTo">
+            </p>
+            <p>
+                <label for="lifespanFrom">Продолжительность жизни:</label>
+                от <input type="number" id="lifespanFrom">
+                до <input type="number" id="lifespanTo">
+            </p>
+
+            <input type="button" value="Найти"
+                onclick="filterTable(trees, 'list', document.getElementById('filter')); clearSort()">
+            <input type="button" value="Очистить фильтры"
+                onclick="clearFilter(trees, 'list', document.getElementById('filter')); clearSort()">
+        </form>
+    </details>
+
+    <details>
+        <summary>Сортировка</summary>
+        <form id="sort">
+        <label for="sort_1">Первый уровень:</label>
+        <select name="sort_1" id="fieldsFirst">
+
+        </select>
+        <label for="down_1">По убыванию?</label><input type="checkbox" name="down_1" id="fieldsFirstDesc">
+
+        <br>
+
+        <label for="sort_2">Второй уровень:</label>
+        <select name="sort_2" id="fieldsSecond">
+
+        </select>
+        <label for="down_2">По убыванию?</label><input type="checkbox" name="down_2" id="fieldsSecondDesc">
+
+        <br>
+
+        <label for="sort_3">Третий уровень:</label>
+        <select name="sort_3" id="fieldsThird">
+
+        </select>
+        <label for="down_3">По убыванию?</label><input type="checkbox" name="down_3" id="fieldsThirdDesc">
+
+        <br>
+
+        <input type="button" value="Сортировать" onclick="sortTable('list', document.getElementById('sort'))"> 
+        <input type="button" value="Сбросить сортировку" onclick="clearSort(trees, 'list'); clearFilter(trees, 'list', document.getElementById('filter'))">
+        </form>
+    </details>
+    <button id="RemoveButton">Скрыть таблицу</button>
+    <table id="list"></table>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white; 
+}
+
+
+th {
+    background-color: black; 
+    color: white; 
+    padding: 10px;
+    text-align: left;
+}
+
+
+td {
+    background-color: white; 
+    padding: 8px;
+    text-align: left;
+    border: 1px solid black; 
+}
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+
+svg text {
+    font: 8px Verdana;
+}
+
+svg path, line {
+    fill: none;
+    stroke: #333333;
+    width: 1px;
+}
+
+.errorText {
+    color: red;
+}
