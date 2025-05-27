@@ -1,0 +1,15 @@
+.gallery-container {
+  text-align: center;
+}
+
+.gallery-view {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.gallery-image {
+  width: 300px;
+}
+
