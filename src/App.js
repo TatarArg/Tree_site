@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import './CSS/App.css';
+import buildings from './data.js';
+import Table from './components/Table.js';
+import Chart from './components/Chart.js';
 
 function App() {
+  const [filteredData, setFilteredData] = useState(buildings);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Самые высокие здания и сооружения</h3>
+      <Chart data={filteredData} />
+      <Table data={buildings} amountRows="10" filtering={setFilteredData} />
     </div>
   );
 }

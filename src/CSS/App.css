@@ -1,0 +1,62 @@
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white; 
+}
+
+
+th {
+  background-color: black; 
+  color: white; 
+  padding: 10px;
+  text-align: left;
+}
+
+
+td {
+  background-color: white; 
+  padding: 8px;
+  text-align: left;
+  border: 1px solid black; 
+}
+
+.show {
+  display: table-row;
+}
+
+.hide {
+  display: none;
+}
+
+.page {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 4px 8px;
+}
+
+.page:hover {
+  background-color: white;
+  color: black;
+}
+
+.current {
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+}
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+
+svg path, line {
+    fill: none;
+    stroke: black;
+    width: 1px;
+}
+ 
+svg text {
+    font: 8px Verdana;
+}
