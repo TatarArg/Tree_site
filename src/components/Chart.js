@@ -6,6 +6,7 @@ const Chart = (props) => {
   const [ox, setOx] = useState("Страна");
   const [oy, setOy] = useState([true, false]);
   const [chartType, setChartType] = useState("Точечная диаграмма");
+  const [hasOyError, setHasOyError] = useState(false); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,13 +19,18 @@ const Chart = (props) => {
     const newType = event.target["type"].value;
 
     if (!newOy[0] && !newOy[1]) {
-      alert("Выберите хотя бы одно значение по оси OY");
+      setHasOyError(true); 
       return;
     }
 
+    setHasOyError(false); 
     setOx(newOx);
     setOy(newOy);
     setChartType(newType);
+  };
+
+  const handleCheckboxFocus = () => {
+    setHasOyError(false); 
   };
 
   const createArrGraph = (data, key) => {
@@ -56,10 +62,10 @@ const Chart = (props) => {
         </div>
 
         <p> Значение по оси OY </p>
-        <div>
-          <input type="checkbox" name="oy" defaultChecked />
+        <div id="oY" className={hasOyError ? "errorText" : ""}>
+          <input type="checkbox" name="oy" defaultChecked onFocus={handleCheckboxFocus} />
           Максимальная высота <br />
-          <input type="checkbox" name="oy" />
+          <input type="checkbox" name="oy" onFocus={handleCheckboxFocus} />
           Минимальная высота
         </div>
 

@@ -1,9 +1,8 @@
 import * as d3 from "d3";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const ChartDraw = ({ data, oy, chartType }) => {
+const ChartDraw = (props) => {
   const chartRef = useRef(null);
-
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -17,16 +16,16 @@ const ChartDraw = ({ data, oy, chartType }) => {
   const boundsWidth = width - margin.left - margin.right;
   const boundsHeight = height - margin.top - margin.bottom;
 
-  const allY = data.flatMap(d => d.values);
+  const allY = props.data.flatMap(d => d.values);
   const [min, max] = d3.extent(allY);
 
   const scaleX = useMemo(() => {
     return d3
       .scaleBand()
-      .domain(data.map(d => d.labelX))
+      .domain(props.data.map(d => d.labelX))
       .range([0, boundsWidth])
       .padding(0.2);
-  }, [data, boundsWidth]);
+  }, [props.data, boundsWidth]);
 
   const scaleY = useMemo(() => {
     return d3
@@ -41,7 +40,6 @@ const ChartDraw = ({ data, oy, chartType }) => {
     const svg = d3.select(chartRef.current);
     svg.selectAll("*").remove();
 
-    // ось X
     svg
       .append("g")
       .attr("transform", `translate(${margin.left}, ${height - margin.bottom})`)
@@ -52,7 +50,6 @@ const ChartDraw = ({ data, oy, chartType }) => {
       .attr("dy", ".15em")
       .attr("transform", "rotate(-30)");
 
-    // ось Y
     svg
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`)
@@ -62,12 +59,23 @@ const ChartDraw = ({ data, oy, chartType }) => {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    // Точечная диаграмма
-    if (chartType === "Точечная диаграмма") {
-      if (oy[0]) {
+    if (props.chartType === "Точечная диаграмма") {
+      if (props.oy[1]) {
+        bounds
+          .selectAll(".dot-min")
+          .data(props.data)
+          .enter()
+          .append("circle")
+          .attr("r", 5)
+          .attr("cx", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
+          .attr("cy", d => scaleY(d.values[0]) + 2) 
+          .style("fill", "blue");
+      }
+
+      if (props.oy[0]) {
         bounds
           .selectAll(".dot-max")
-          .data(data)
+          .data(props.data)
           .enter()
           .append("circle")
           .attr("r", 5)
@@ -75,32 +83,18 @@ const ChartDraw = ({ data, oy, chartType }) => {
           .attr("cy", d => scaleY(d.values[1]))
           .style("fill", "red");
       }
-
-      if (oy[1]) {
-        bounds
-          .selectAll(".dot-min")
-          .data(data)
-          .enter()
-          .append("circle")
-          .attr("r", 5)
-          .attr("cx", d => scaleX(d.labelX) + scaleX.bandwidth() / 2)
-          .attr("cy", d => scaleY(d.values[0]))
-          .style("fill", "blue");
-      }
     }
 
-    // Гистограмма
-    if (chartType === "Гистограмма") {
-      const totalBars = oy.filter(Boolean).length;
+    if (props.chartType === "Гистограмма") {
+      const totalBars = props.oy.filter(Boolean).length;
       const barWidth = scaleX.bandwidth() / (totalBars || 1);
 
       let offset = 0;
 
-      // Сначала минимальные — слева
-      if (oy[1]) {
+      if (props.oy[1]) {
         bounds
           .selectAll(".bar-min")
-          .data(data)
+          .data(props.data)
           .enter()
           .append("rect")
           .attr("x", d => scaleX(d.labelX) + (totalBars === 2 ? 0 : offset))
@@ -112,11 +106,10 @@ const ChartDraw = ({ data, oy, chartType }) => {
         if (totalBars === 2) offset += barWidth;
       }
 
-      // Затем максимальные — справа
-      if (oy[0]) {
+      if (props.oy[0]) {
         bounds
           .selectAll(".bar-max")
-          .data(data)
+          .data(props.data)
           .enter()
           .append("rect")
           .attr("x", d => scaleX(d.labelX) + (totalBars === 2 ? barWidth : 0))
@@ -126,7 +119,7 @@ const ChartDraw = ({ data, oy, chartType }) => {
           .style("fill", "red");
       }
     }
-  }, [width, height, data, oy, chartType, scaleX, scaleY, boundsHeight, margin]);
+  }, [width, height, props.data, props.oy, props.chartType, scaleX, scaleY, boundsHeight, margin]);
 
   return <svg ref={chartRef} width="500" height="400" />;
 };

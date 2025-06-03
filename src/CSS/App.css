@@ -60,3 +60,7 @@ svg path, line {
 svg text {
     font: 8px Verdana;
 }
+
+.errorText {
+  color: red;
+}
