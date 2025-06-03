@@ -1,24 +1,17 @@
-/*
-   компонент, для фильтрации таблицы
-   пропсы:
-      fullData - полные данные, по которым формировалась таблица при загрузке страницы
-      data - данные для фильтрации
-      filtering - функция обновления данных для фильтрации
-*/
-
 const Filter = (props) => {
     const handleReset = () => {
         props.filtering(props.fullData);
+        if (props.onReset) {
+            props.onReset(); // вызов сброса из Table
+        }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
         const filterField = {
             "Название": event.target["structure"].value.toLowerCase(),
             "Тип": event.target["type"].value.toLowerCase(),
             "Континент": event.target["continent"].value.toLowerCase(),
-
             "Высота, м": [
                 event.target["heightMin"].value !== ""
                     ? Number(event.target["heightMin"].value)
@@ -69,19 +62,9 @@ const Filter = (props) => {
 
     return (
         <form onSubmit={handleSubmit} onReset={handleReset}>
-            <p>
-                <label>Название:</label>
-                <input name="structure" type="text" />
-            </p>
-            <p>
-                <label>Тип:</label>
-                <input name="type" type="text" />
-            </p>
-            <p>
-                <label>Континент:</label>
-                <input name="continent" type="text" />
-            </p>
-
+            <p><label>Название:</label><input name="structure" type="text" /></p>
+            <p><label>Тип:</label><input name="type" type="text" /></p>
+            <p><label>Континент:</label><input name="continent" type="text" /></p>
             <p>
                 <label>Высота: от</label>
                 <input name="heightMin" type="number" />
