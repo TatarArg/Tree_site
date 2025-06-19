@@ -3,20 +3,21 @@ import logo from './images/logo.svg';
 import './styles/App.css';
 
 import Navbar from "./components/Navbar";
-import Gallery from "./components/Gallery";
-import Content from "./components/Content"; 
+import Gallery from "./main/components/Gallery";
+import Content from "./main/components/Content";
 import Footer from './components/Footer';
 
 
+import Main from "./main/Main";
+import List from "./list/List";
+import Building from "./building/Building";
+
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Gallery />
-      <Content/> 
-      <Footer/>
-    </div>
+    <>
+      <List/>
+    </>
   );
 }
-
 export default App;
+
