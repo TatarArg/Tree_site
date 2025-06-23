@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
+import { Link } from 'react-router-dom';
+
+
 function Navbar() {
   const theme = useTheme();
   const isMediumOrSmaller = useMediaQuery(theme.breakpoints.down('md'));
@@ -30,11 +33,20 @@ function Navbar() {
 
         {!isMediumOrSmaller && (
           <Box>
-            <Button color="inherit">Главное</Button>
-            <Button color="inherit">Дерево</Button>
-            <Button color="inherit" disabled>
-              Топ высоких деревьев
-            </Button>
+            <Link to="/">
+              <Button color="inherit">Главная</Button>
+            </Link>
+
+            <Link to="/list">
+              <Button color="inherit">Список Деревье</Button>
+            </Link>
+            <Link to="/Tree/0">
+              <Button color="inherit">Дерево</Button>
+            </Link>
+            <Link to="/chart">
+              <Button color="inherit">Диаграммы</Button>
+            </Link>
+
           </Box>
         )}
       </Toolbar>

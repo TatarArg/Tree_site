@@ -5,7 +5,7 @@ import Image4 from './images/Ель Ситха.jpg';
 import Image5 from './images/Жёлтая меранди.jpg';
 import Image6 from './images/Камедь манны.jpg';
 
-const trees = [
+const structures = [
   {
     name: 'Кипарис Гималайский',
     image: Image1,
@@ -40,7 +40,7 @@ const trees = [
 
 const images = ['./images/Кипарис Гималайский.jpg', './images/Рябина.jpg', './images/Гигантская секвойя.jpg']
 
-export default trees;
+export default structures;
 
 export { images };
 
